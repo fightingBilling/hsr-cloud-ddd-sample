@@ -11,13 +11,14 @@
 
   <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
     <property name="location" value="classpath:/jdbc.properties"/>
+    <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"/>
   </bean>
 
   <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-    <property name="url" value="${hibernate.connection.url}"/>
-    <property name="driverClassName" value="${hibernate.connection.driver_class}"/>
-    <property name="username" value="${hibernate.connection.username}"/>
-    <property name="password" value="${hibernate.connection.password}"/>
+    <property name="url" value="${DDD_SAMPLE_DATABASE_CONNECTION_URL}"/>
+    <property name="driverClassName" value="${DDD_SAMPLE_DATABASE_CONNECTION_DRIVER_CLASS}"/>
+    <property name="username" value="${DDD_SAMPLE_DATABASE_CONNECTION_USERNAME}"/>
+    <property name="password" value="${DDD_SAMPLE_DATABASE_CONNECTION_PASSWORD}"/>
     <property name="initialSize" value="4"/>
     <property name="defaultAutoCommit" value="false"/>
   </bean>
